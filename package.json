@@ -8,6 +8,7 @@
     "server": "node server.js",
     "start": "node server.js"
   },
+  "heroku-postbuild": "npm install --production",
   "engines":{
     "node":"14.15.4"
   },
