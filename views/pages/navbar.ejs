@@ -1,0 +1,64 @@
+<nav>
+    <div class="nav-container">
+        <div class="nav-container-title">
+            <h3 class="text-white">Bishee Barnabee</h3>
+        </div>
+        <ul class='nav-container-content'>
+            <li class='link'><a href='/index'>Home</a></li>
+            <li class='link'><a href='/room'>Rooms</a></li>
+            <li class='link'><a href='/index#restaurant'>Facilities</a></li>
+            <li class='link'><a href='/index#contact'>Contact</a></li>
+        </ul>
+        <div class="nav-container-menu-btn">
+            <div class="lines">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main image of room. Located just under the nav-bar -->
+<div class="section-1" id="home">
+    <div class="slider">
+        <div class="slide current">
+            <div class="hero-text">
+                <h2>The Bishee Barnabee Hotel</h2>
+                <p class="m-5">Browse our collection of award-winning rooms</p>
+                <a href="#view-rooms" id="book-room-href">Book Room</a>
+            </div>
+
+            <div class="content">
+                <h1>Standard Twin Room | £<%- rate['std_t'] %></h1>
+                <h1>Superior Twin Room &ThinSpace;| £<%- rate['sup_t'] %></h1>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="hero-text">
+                <h2>The Bishee Barnabee Hotel</h2>
+                <p class="m-5">Explore the historic city of Norwich</p>
+                <a href="#view-rooms" id="book-room-href">Book Room</a>
+            </div>
+            <div class="content">
+                <h1>Standard Double Room | £<%- rate['std_d'] %></h1>
+                <h1>Superior Double Room &ThinSpace;| £<%- rate['sup_d'] %></h1>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="hero-text">
+                <h2>The Bishee Barnabee Hotel</h2>
+                <p class="m-5">Follow Your Dreams</p>
+                <a href="#view-rooms" id="book-room-href">Book Room</a>
+            </div>
+            <div class="content">
+                <h1>Exclusive Room Options</h1>
+                <h1>Choose Your Room Now!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prev"><i class="fas fa-arrow-left"></i></button>
+        <button id="next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+</div>

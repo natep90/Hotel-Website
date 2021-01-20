@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/facf13c344.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/adminstyle.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+		defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"
+		defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+		integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"
+		defer></script>
+	<script src="/js/roomstatus.js" defer></script>
+	<script src="/js/changepayment.js" defer></script>
+	<script src="/js/changeprices.js" defer></script>
+	<title>Admin Dashboard</title>
+</head>
+
+<body>
+
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-md navbar-light">
+		<button class="navbar-toggler ml-auto mb-3 bg-light" type="button" data-toggle="collapse"
+			data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- sidebar -->
+					<div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 border-bottom"
+							id="admin-title">Admin
+							Panel</a>
+						<div class="border-bottom pb-3">
+							<img src="/imgs/admin.jpg" width="70" class="rounded-circle mr-3">
+							<a href="#" class="text-white"></a></a>
+							<img src="/imgs/admin1.jpg" width="70" class="rounded-circle mr-3">
+							<a href="#" class="text-white"></a>
+							<img src="/imgs/admin2.jpg" width="70" class="rounded-circle mr-3">
+							<a href="#" class="text-white"></a>
+						</div>
+						<ul class="navbar-nav flex-column mt-4">
+							<li class="nav-item">
+								<a href="#" class="nav-link text-white p-3 mb-2 sidebar-href current">
+									<i class="far fa-user text-light fa-lg mr-3"></i>
+									Dashboard
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<!-- end of sidebar -->
+
+					<!-- top-nav -->
+					<div class="col-xl-10 col-lg-9 col-md-8 ml-auto fixed-top py-2 top-navbar">
+						<div class="row align-items-center">
+							<h2 class="text-light text-uppercase px-2 py-2"> Dashboard</h2>
+						</div>
+					</div>
+					<!-- end of top-nav -->
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- end of navbar -->
+
+	<!--bootstrap cards-->
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<div class="row pt-md-5 mt-md-3 mb-4">
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-store-alt fa-5x text-success"></i>
+										<div class="text-right text-secondary">
+											<h5>Available Rooms</h5>
+											<h3 id="a-room"></h3>
+
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-store-alt-slash fa-5x text-dark"></i>
+										<div class="text-right text-secondary">
+											<h5>Unavailable Rooms</h5>
+											<h3 id="u-room"></h3>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-user-check fa-5x text-info"></i>
+										<div class="text-right text-secondary">
+											<h5>Checked Out Rooms</h5>
+											<h3 id="c-room"></h3>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--end of bootstrap cards-->
+
+	<!--tables start -->
+	<!-- room status table -->
+	<section>
+		<div class=" container-fluid">
+			<div class="row">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<h3 class="text-secondary mb-3">Room Table</h3>
+					<div class="row align-items-center">
+						<div class="table-scrollbar table-scroll-y">
+							<table class="table table-striped bg-light text-center" id="#table-room">
+								<thead>
+									<tr class="text-secondary">
+										<th>Room Number</th>
+										<th>Room Type</th>
+										<th>Room Price</th>
+										<th>Room Notes</th>
+										<th>Room Status</th>
+										<th>Change Status</th>
+									</tr>
+								</thead>
+								<tbody id="roomtable">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end of room status table -->
+
+	<!--bootstrap cards-->
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<div class="row pt-md-3 mt-md-1 mb-4">
+
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light  card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-pound-sign fa-5x text-success"></i>
+										<div class="text-right text-secondary">
+											<h5>Total Cost (£)</h5>
+											<h3 id="total-cost"></h3>
+
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-money-bill-alt fa-5x text-danger"></i>
+										<div class="text-right text-secondary">
+											<h5>Amount Outstanding (£)</h5>
+											<h3 id="amount-out"></h3>
+
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-sm-6 p-2">
+							<div class="card bg-light card-common">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<i class="fas fa-cash-register fa-5x text-info"></i>
+										<div class="text-right text-secondary">
+											<h5>Income (£)</h5>
+											<h3 id="total-income"></h3>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-info text-bold pb-3">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--end of bootstrap cards-->
+
+	<!-- payment table -->
+	<section>
+		<div class="container-fluid">
+			<div class="row mb-5">
+				<div class="col-xl-10 col-lg-9 col-md-8  ml-auto">
+					<h3 class="text-secondary mb-3">Payment Table</h3>
+					<div class="row align-items-center">
+						<div class="table-scrollbar table-scroll-y">
+							<table class="table table-striped bg-light text-center" id="full-payment-table">
+								<thead>
+									<tr class="text-secondary">
+										<th>Booking Reference</th>
+										<th>Customer Name</th>
+										<th>Total Cost</th>
+										<th id="amount_outstanding">Amount Outstanding</th>
+										<th>Amount</th>
+										<th>Transaction</th>
+									</tr>
+								</thead>
+								<tbody id="payment-table">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end of room payment table -->
+
+	<!-- change price table -->
+
+	<!-- price table -->
+	<section>
+		<div class="container-fluid">
+			<div class="row mb-5">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<h3 class="text-secondary mb-3">Price Table</h3>
+					<div class="row align-items-center">
+						<div class="table-scrollbar table-scroll-y">
+							<table class="table table-striped bg-light text-center" id="full-price-table">
+								<thead>
+									<tr class="text-secondary">
+										<th>Room Type</th>
+										<th>Room Price</th>
+										<th>Change Room Price</th>
+									</tr>
+								</thead>
+								<tbody id="price-table">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- end of change price table -->
+
+
+	<!--tables end-->
+
+
+
+</body>
+
+</html>

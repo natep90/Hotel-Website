@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/39a837138d.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Bishee Barnabee Hotel - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/room.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href='../imgs/favicon.png' />
+    <script src='/js/reviewSlider.js' defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/scrolleffect.js" defer></script>
+    <script src="/js/slidereffect.js" defer></script>
+</head>
+
+<body>
+    <!-- Nav bar section -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-container-title">
+                <h3 class="text-white">Bishee Barnabee</h3>
+            </div>
+            <ul class='nav-container-content'>
+                <li class='link'><a href='/index'>Home</a></li>
+                <li class='link'><a href='#'>Rooms</a></li>
+                <li class='link'><a href='/index#restaurant'>Facilities</a></li>
+                <li class='link'><a href='/index#contact'>Contact</a></li>
+            </ul>
+            <div class="nav-container-menu-btn">
+                <div class="lines">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main image of room. Located just under the nav-bar -->
+    <div class="section-1" id="home">
+        <div class="slider">
+            <div class="slide current">
+                <div class="hero-text">
+                    <h2>Twin Room</h2>
+                    <p>Norwich Hotel Company</p>
+                </div>
+                <div class="content">
+                    <h1>Standard Twin Room | £<%- rate['std_t'] %></h1>
+                    <h1>Superior Twin Room &ThinSpace;| £<%- rate['sup_t'] %></h1>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="hero-text">
+                    <h2>Double Room</h2>
+                    <p>Norwich Hotel Company</p>
+                </div>
+                <div class="content">
+                    <h1>Standard Double Room | £<%- rate['std_d'] %></h1>
+                    <h1>Superior Double Room &ThinSpace;| £<%- rate['sup_d'] %></h1>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="hero-text">
+                    <h2>Standard and Superior</h2>
+                    <p>Norwich Hotel Company</p>
+                </div>
+                <div class="content">
+                    <h1>Exclusive Room Options</h1>
+                    <h1>Choose Your Room Now!</h1>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fas fa-arrow-left"></i></button>
+            <button id="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="room-info-container">
+            <div class="room-info-container-items">
+                <div class="room-info-container-item">
+
+                    <p><i class="fas fa-sink"></i> En Suite</p>
+                </div>
+                <div class="room-info-container-item">
+                    <p><i class="fas fa-fan"></i> Air Conditioning</p>
+                </div>
+                <div class="room-info-container-item">
+                    <p><i class="fas fa-eye"></i> Nice View</p>
+                </div>
+                <div class="room-info-container-item">
+                    <p><i class="fas fa-shower"></i> Large Shower</p>
+                </div>
+                <div class="room-info-container-item">
+                    <p><i class="fas fa-tv"></i> Television</p>
+                </div>
+                <div class="room-info-container-item">
+                    <p><i class="fas fa-wifi"></i> High Speed Wifi</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="room-container-price">
+                <h3 class='bold'>Book now!</h3>
+            </div>
+            <div class="room-container-options-container">
+                <div class="room-container-options-container-booking">
+                    <p class='bold'>Booking form</p>
+                </div>
+                <div class="room-container-options-container-enquire">
+                    <p class='bold'>Enquire</p>
+                </div>
+            </div>
+            <div class="room-container-booking-form">
+                <div class="room-container-options room-container-options-booking">
+                    <div class="form-room-options">
+                        <div class="room-container-options-room-options">
+                            <div class="room-container-options-room-options-room-info">
+
+                                <div class="room-container-options-room-options-option">
+                                    <label class='bold' for="room-type"> Room type </label>
+                                    <select name="room-type" id="room-type">
+                                        <option value="twin">Twin</option>
+                                        <option value="double">Double</option>
+                                    </select>
+                                </div>
+                                <div class="room-container-options-room-options-option">
+                                    <label class='bold' for="room-class"> Room class </label>
+                                    <select name="room-class" id="room-class">
+                                        <option value="standard">Standard</option>
+                                        <option value="superior">Superior</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="room-container-options-room-options-dates">
+                                <div class="room-container-options-checkin">
+                                    <label class='bold' for="checkin"> Checkin date: </label>
+                                    <input type="date" id='checkin' name='checkin' value='2018-10-09'>
+                                </div>
+                                <div class="room-container-options-checkout">
+                                    <label class='bold' for="checkout"> Checkout date: </label>
+                                    <input type="date" id='checkout' name='checkout' value='2018-10-09'>
+                                </div>
+                            </div>
+                            <div class="remove-check-btn-container">
+                                <button onclick='removeBtnFunc(this)' type='button'
+                                    class='room-container-options-room-options-button-remove'>Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-container-options-room-options-button-container">
+                        <i class="fas fa-info-circle" id='info-button'></i>
+                        <button type='button' class='room-container-options-room-options-button-add'>Add Room</button>
+                    </div>
+
+
+                    <div class="room-container-booking-btn">
+                        <a><button>Check Room Availability</button></a>
+                        <button id='proceedtoBookingBtn'>Proceed to Booking</button>
+                    </div>
+                </div>
+                <div class="popup-overlay">
+                    <div class="popup-container">
+                        <h3 class='popup-title'>Room Recommendations:</h3>
+                        <p>If you don't see anything then all of your room choices are available!</p>
+                        <p id='close-popup' onclick="closePopup()">&times;</p>
+                        <div class="popup-content">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <form id='form' submit='#' onsubmit='popupFunc()'
+                    class="room-container-options room-container-options-enquire">
+                    <div class="room-container-options-option room-container-options-name">
+                        <label class='bold' for="name"> Name: </label>
+                        <input type="text" id='name' name='name'>
+                    </div>
+                    <div class="room-container-options-option room-container-options-email">
+                        <label class='bold' for="email"> Email: </label>
+                        <input type="email" id='email' name='email'>
+                    </div>
+                    <div class="room-container-options-option room-container-options-message">
+                        <label class='bold' for="message"> Message: </label>
+                        <textarea name="message" form='form' cols="30" rows="4"></textarea>
+                    </div>
+                    <div class="room-container-booking-btn">
+                        <button>ENQUIRE</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="container3">
+        <ul class="container3-nav-bar-items">
+            <li class='container3-nav-bar-item container3-nav-bar-item-1 item-active'>Details</li>
+            <li class='container3-nav-bar-item container3-nav-bar-item-2'>Reviews</li>
+        </ul>
+    </div>
+    <div class="container4">
+        <div class="container4-details-container">
+            <div class="container4-details-container-room-details">
+                <h2>Room details</h2>
+                <p>At the Bishee Barnabee we have a room type for every occasion. All of our rooms are airy, spacious
+                    and comfortable. With our locally crafted matresses and bedsheets, you'll sleep better than you have
+                    have before...
+
+                </p>
+                <p>We have two classes of rooms at the bishee Barnabee</p>
+                <div class="container4-details-container-room-details-room-types">
+                    <div class="standard">
+                        <h3>Standard</h3>
+                        <ul>
+                            <li>Spacious Room</li>
+                            <li>Mini Fridge</li>
+                            <li>Fresh Fruit</li>
+                        </ul>
+                    </div>
+
+                    <div class="superior">
+                        <h3>Superior</h3>
+                        <ul>
+                            <li>En Suite</li>
+                            <li>Great Views</li>
+                            <li>Room Service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container4-details-flex-container container4-details-flex-container-1">
+                <div class="container4-details-container-item container4-details-container-item-1">
+                    <div class="item-header">
+                        Arrival Time
+                    </div>
+                    <div class="item-info">
+                        After 16:00 on day of booking
+                    </div>
+                </div>
+            </div>
+            <div class="container4-details-flex-container container4-details-flex-container-2">
+                <div class="container4-details-container-item container4-details-container-item-2">
+                    <div class="item-header">
+                        Checkout Time
+                    </div>
+                    <div class="item-info">
+                        Before 12:00
+                    </div>
+                </div>
+            </div>
+            <div class="container4-details-flex-container container4-details-flex-container-3">
+                <div class="container4-details-container-item container4-details-container-item-3">
+                    <div class="item-header">
+                        Arrival Time
+                    </div>
+                    <div class="item-info">
+                        After 16:00 on day of booking
+                    </div>
+                </div>
+            </div>
+            <div class="container4-details-flex-container container4-details-flex-container-4">
+                <div class="container4-details-container-item container4-details-container-item-4">
+                    <div class="item-header">
+                        Price includes
+                    </div>
+                    <div class="item-info">
+                        <ul>
+                            <li>Taxi from the airport</li>
+                            <li>Guided Tour of Norwich</li>
+                            <li>Breakfast</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container4-reviews-container">
+            <div class="container4-reviews">
+                <div class="container4-reviews-item review-active">
+                    <div class="container4-reviews-item-content">
+                        <img src="../imgs/carousel2.jpg" alt="">
+                        <div class="container4-reviews-item-content-text">
+                            <h3>Sophie Ellis Bexter</h3>
+                            <p>"I had an absolutely fantastic time. I totally killed it on the dance floor every Friday
+                                night while I was here. Amazing DJ burned the house down! Great views, great people.
+                                Highly recommend!"</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container4-reviews-item review-active">
+                    <div class="container4-reviews-item-content">
+                        <img src="../imgs/corousel3.jpg" alt="">
+                        <div class="container4-reviews-item-content-text">
+                            <h3>Katy Perry</h3>
+                            <p>"I had a wonderful time at the hotel. the staff there are so nice, especially the I.T
+                                department. There was a very charming young man called Nuri who helped me solve my
+                                laptop issues. I'll be coming back"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container4-reviews-item review-active">
+                    <div class="container4-reviews-item-content">
+                        <img src="../imgs/corousel4.jpg" alt="">
+                        <div class="container4-reviews-item-content-text">
+                            <h3>Jennifer Lawrence</h3>
+                            <p>"What a deal! This hotel is insanely good value! I took the free tour of Norwich by a guy
+                                called Matt who was so funny and knowledgable, the perfect combination!"</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container4-reviews-item review-active">
+                    <div class="container4-reviews-item-content">
+                        <img src="../imgs/corousel5.jpg" alt="">
+                        <div class="container4-reviews-item-content-text">
+                            <h3>Kelly Clarkson</h3>
+                            <p>"Ever since I spoke to Nathan on the phone, I just knew this was the place for me. Nathan
+                                gave me a personal tour of Norwich, a truly beautiful city. 5 stars for Nathan!"</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container4-reviews-item review-active">
+                    <div class="container4-reviews-item-content">
+                        <img src="../imgs/corousel6.jpg" alt="">
+                        <div class="container4-reviews-item-content-text">
+                            <h3>Donald Trump</h3>
+                            <p>"I mean, what can I say, I came here to make a trade deal with the UK and we made a good
+                                deal, fantastic people here, absolutely fantastic."</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container4-reviews-button-next"><i class="fas fa-arrow-right"></i></div>
+                <div class="container4-reviews-button-prev"><i class="fas fa-arrow-left"></i></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Photo Gallery HTML -->
+
+
+    <div class="container5">
+        <h2>Photos from our Guests:</h2>
+        <div class="container5-gallery">
+            <figure class="gallery_item gallery-item--1">
+                <img src="../imgs/gallery1.jpg" alt="Image 1" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--2">
+                <img src="../imgs/gallery2.jpg" alt="Image 2" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--3">
+                <img src="../imgs/gallery3.jpg" alt="Image 3" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--4">
+                <img src="../imgs/gallery4.jpg" alt="Image 4" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--5">
+                <img src="../imgs/gallery5.jpg" alt="Image 5" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--6">
+                <img src="../imgs/gallery6.jpg" alt="Image 6" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery-item--7">
+                <img src="../imgs/gallery7.jpg" alt="Image 7" class="gallery_img">
+            </figure>
+        </div>
+    </div>
+
+    <%- include('footer') %>
+
+
+</body>
+
+</html>

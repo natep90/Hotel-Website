@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The Bishee Barnabee Hotel - Home</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href='../imgs/favicon.png' />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+    defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+    defer></script>
+  <script src="https://kit.fontawesome.com/facf13c344.js" crossorigin="anonymous"></script>
+  <script src="/js/index.js" defer></script>
+  <script src="/js/scrolleffect.js" defer></script>
+  <script src="/js/slidereffect.js" defer></script>
+
+
+</head>
+
+<body>
+
+  <%- include('navbar.ejs'); -%>
+
+  <section id="animation">
+    <div id="content">
+      <section class="brief-info">
+        <div class="container-fluid fade-in">
+          <div class="row justify-content-around bg-light h-30 transparent-div">
+            <div class="col-lg-2 col-md-6 pt-4 pb-4">
+              <h3 class="text-primary"><i class="fas fa-bed"></i> Hotel Types</h3>
+              <p class="p-padding">- We have twin and <br> double rooms available <br>with standard and superior
+                <br>specifications
+              </p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-4 pb-4">
+              <h3 class="text-primary"><i class="fas fa-smile-beam"></i> + 4.5 <i class="fas fa-star"></i> Feedback</h3>
+              <p class="p-padding">- Ranked number 1 hotel in <br> Norfolk
+                for 3 years running <br> on trip advisor!</p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-4 pb-4">
+              <h3 class="text-primary"><i class="fas fa-concierge-bell"></i> Great Service</h3>
+              <p class="p-padding">- Our passionate staff are always <br>available to ensure you get the <br>best from
+                your stay
+                – we are <br> here for you.</p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-4 pb-4">
+              <h3 class="text-primary"><i class="fas fa-calendar-alt"></i> Fast Booking</h3>
+              <p class="p-padding">- Book in just two easy <br>steps. No payment until <br> you checkout at the end <br>
+                of your stay!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hotel-price" id="view-rooms">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="hotel-price-title my-4"><span class="border-bottom border-info text-info">Hotel Price
+                  List</span></h2>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-3 slide-in left-side">
+              <div class="hover-bg-primary position-relative border"> <img src="../imgs/standard-twin.jpg"
+                  class="img-fluid" alt="feature-image">
+                <div class="standard-room-price text-center text-bold">
+                  <span class="py-3 px-3 bg-price">£
+                    <span id="standard-twin"><%- rate['std_t'] %></span> / Night
+                  </span>
+                </div>
+
+                <h5 class="pt-5 pb-3 card-title text-center"><span id="roomtype"
+                    class="border-bottom border-info card-title">Standard Twin</span></h5>
+
+                <ul id="hotel-offer" class="px-5 pl-3">
+                  <li><i class="fas fa-tv icon-color"></i> HD TV</li>
+                  <li><i class="fas fa-concierge-bell icon-color pr-1"></i> Regular Service</li>
+                  <li><i class="fas fa-user icon-color pr-1"></i> Twin Size</li>
+                  <li><i class="fas fa-wifi icon-color"></i> Free Wifi</li>
+                </ul>
+                <div class="py-4 text-center">
+                  <a class="btn btn-outline-success btn-lg rounded-0 px-5" href="/room">BOOK NOW</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-3 slide-in left-side">
+              <div class="snadow-lg hover-bg-primary position-relative border"> <img src="../imgs/superior-twin.jpg"
+                  width="600px" class="img-fluid" alt="feature-image">
+                <div class="standard-room-price text-center text-bold">
+                  <span class="py-3 px-3 bg-price">£
+                    <span id="superior-twin"><%- rate['sup_t'] %></span> / Night
+                  </span>
+                </div>
+
+                <h5 class="pt-5 pb-3 card-title text-center"><span id="roomtype"
+                    class="border-bottom border-info text-info card-title">Superior Twin</span></h5>
+
+                <ul id="hotel-offer" class="px-5">
+                  <li><i class="fas fa-tv icon-color"></i> 8K TV</li>
+                  <span> </span>
+                  <li><i class="fas fa-concierge-bell icon-color"></i></span> Premium Service</li>
+                  <li><i class="fas fa-user icon-color pr-2"></i>Superior Twin </li>
+                  <li><i class="fas fa-wifi icon-color"></i> Free Wifi</li>
+                </ul>
+
+                <div class="py-4 text-center">
+                  <a class="btn btn-outline-success btn-lg rounded-0 px-5" href="/room">BOOK NOW</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-3 slide-in right-side">
+              <div class="snadow-lg hover-bg-primary position-relative border"> <img src="../imgs/standard-double.jpg"
+                  class="img-fluid" alt="feature-image">
+                <div class="standard-room-price text-center text-bold">
+                  <span class="py-3 px-3 bg-price">£
+                    <span id="standard-double"><%- rate['std_d'] %></span> / Night
+                  </span>
+                </div>
+
+                <h5 class="pt-5 pb-3 card-title text-center"><span id="roomtype"
+                    class="border-bottom border-info card-title text-dark">Standard Double</span></h5>
+
+                <ul id="hotel-offer" class="px-5 pl-3">
+                  <li><i class="fas fa-tv icon-color pr-2"></i> 4K TV</li>
+                  <span> </span>
+                  <li><i class="fas fa-concierge-bell icon-color pr-3"></i></span>Regular Service</li>
+                  <li><i class="fas fa-user icon-color"></i><i class="fas fa-user icon-color"></i>Double Size</li>
+                  <li><i class="fas fa-wifi icon-color pr-2"></i> Free Wifi</li>
+                </ul>
+
+                <div class="py-4 text-center">
+                  <a class="btn btn-outline-success btn-lg rounded-0 px-5" href="/room">BOOK NOW</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-3 slide-in right-side">
+              <div class="snadow-lg hover-bg-primary position-relative border"> <img src="../imgs/superior-double.jpg"
+                  class="img-fluid" alt="feature-image">
+                <div class="standard-room-price text-center text-bold">
+                  <span class="py-3 px-3 bg-price">£
+                    <span id="superior-double"><%- rate['sup_d'] %></span> / Night
+                  </span>
+                </div>
+
+                <h5 class="pt-5 pb-3 card-title text-center"><span id="roomtype"
+                    class="border-bottom border-info card-title text-info">Superior Double</span></h5>
+
+                <ul id="hotel-offer" class="px-5 pl-3">
+                  <li><i class="fas fa-tv icon-color pr-2"></i> 4K TV</li>
+                  <span> </span>
+                  <li><i class="fas fa-concierge-bell icon-color pr-3"></i></span>Premium Service</li>
+                  <li><i class="fas fa-user icon-color"></i><i class="fas fa-user icon-color"></i>Superior Double</li>
+                  <li><i class="fas fa-wifi icon-color pr-2"></i> Free Wifi</li>
+                </ul>
+
+                <div class="py-4 text-center">
+                  <a class="btn btn-outline-success btn-lg rounded-0 px-5" href="/room">BOOK NOW</a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+
+      <section class="hotel-info mb-3" id="attraction">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="hotel-price-title my-3"><span class="border-bottom border-success text-success">Local
+                  Attractions</span></h2>
+            </div>
+            <div class="col-lg-4 my-3 slide-in left-side">
+              <div class="card">
+                <img class="card-img-top" src="../imgs/norwich-city-center.jpg" alt="norwich city center">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Norwich - City Center</h5>
+                  <p class="card-text text-dark">Norwich city centre is a bus ride away and is home to thousands of
+                    shops, cafes, restaurants and of course, the mighty Norwich City. A beautiful city all year round.
+                  </p>
+                  <a href="https://www.visitnorwich.co.uk/" target="_blank" class="btn btn-outline-success btn-sm">More
+                    Information</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 my-3 fade-in">
+              <div class="card">
+                <img class="card-img-top" src="../imgs/norwich-research-park.jpg" alt="norwich research park">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Norwich - Research Park</h5>
+                  <p class="card-text text-dark">We are located just a stone’s throw away from the world-famous Norwich
+                    Research Park and are the number 1 choice for visiting businesspersons, academics and researchers
+                    from around the globe.</p>
+                  <a href="https://www.norwichresearchpark.com/" target="_blank"
+                    class="btn btn-outline-success btn-sm">More
+                    Information</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 my-3 slide-in right-side">
+              <div class="card">
+                <img class="card-img-top" src="../imgs/norwich-cathedral.jpg" alt="norwich hospital">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Norwich - Cathedral</h5>
+                  <p class="card-text text-dark">Norwich Cathedral is one of the largest in Europe and was completed in
+                    1145 by the Norman inhabitants of Norwich. Guests at our hotel are entitled to 50% off all Cathedral
+                    tours!</p>
+                  <a href="https://www.cathedral.org.uk/" target="_blank" class="btn btn-outline-success btn-sm">More
+                    Information</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="facilities" id="facility">
+        <div class="container-fluid p-5" id="restaurant">
+          <div class="row">
+            <div class="col-lg-5 py-5">
+              <h3 class="display-3 text-light py-4">Restaurant</h3>
+              <p class="text-light py-3 fade-in facility-page-text">The Bishee Barnabee restaurant, established in 1923,
+                is a must-visit
+                for food lovers. Michelin star chef Nuri Dagasan (who coincidentally is also an excellent web developer)
+                provides a new and innovative Turkish-inspired menu each season – each time you visit, you can
+                experience something different. All produce is locally grown and/or sourced. Guests are entitled to 20%
+                discount and bills will be added to your booking, so nothing to worry about until checkout!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid p-5" id="bar">
+          <div class="row">
+            <div class="col-lg-7 pb-5"></div>
+            <div class="col-lg-5 pb-5">
+              <h3 class="display-3 text-light py-4">Bar</h3>
+              <p class="text-light py-3 fade-in facility-page-text">Our bar is attached to the rear of our restaurant
+                and top UK mixologist
+                Matthew Bagnall plays host. He provides several signature cocktails for guests and ensures patrons are
+                made to feel welcome. Guests are entitled to 20% discount off all food and drink and bills will be added
+                to your booking, so nothing to worry about until checkout! Our bar is open daily from noon until late.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid p-5" id="gym">
+          <div class="row">
+            <div class="col-lg-5 py-5">
+              <h3 class="display-3 text-light py-4">Gym</h3>
+              <p class="text-light py-3 fade-in facility-page-text">Our state-of-the-art gym facility was completed in
+                2017 and includes free weights, Olympic lift stations, cable machines and cardio equipment (including
+                treadmills, rowing machines, stationary cycles and more). Our personal trainers are on hand to help
+                guide your workout if you so wish. We also run group exercise and yoga classes in our yoga studio – free
+                for all guests! Sign up to a specific class through reception.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid p-5" id="meeting">
+          <div class="row">
+            <div class="col-md-7 pb-5"></div>
+            <div class="col-lg-5 pb-5">
+              <h3 class="display-3 text-light py-4">Meeting and Function Rooms</h3>
+              <p class="text-light py-3 fade-in facility-page-text">Our hotel remains a top destination for
+                businesspersons
+                visiting the
+                Norwich Research Park or the University of East Anglia and we provide 3 function rooms to facilitate the
+                needs of these guests. The Bishee is also an excellent choice for any number of functions (birthdays,
+                celebrations, parties) and our multifunctional rooms handle all events with ease. Rooms can be hired via
+                reception and guests are entitled to 20% discount!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-page" id="contact">
+        <div class="container services">
+          <div class="form-row pt-5 pb-5">
+            <div class="col-xl-7 col-md-6 align-self-center d-flex justify-content-center slide-in left-side">
+              <div class="hotel-info">
+                <h3><i class="fas fa-hotel"></i> ADDRESS</h3>
+                <p class="p-padding">132 Scotsburn Rd
+                  <br>TAFARNAUBACH, NP2 6ZT</p>
+                <h3><i class="fas fa-envelope"></i> EMAIL</h3>
+                <p class="p-padding"> hotelnorwich@norwich.co.uk</p>
+                <h3><i class="fas fa-phone-square-alt"></i> PHONE NUMBER</h3>
+                <p class="p-padding">+44070 0456 5270</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 bgrn-container border border-info slide-in right-side">
+              <div>
+                <div class="form-row p-4">
+                  <h2 class="col-12 contact">Contact Us</h2>
+
+                  <div class="form-group col-12">
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="name">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for=" textarea">Message:</label>
+                    <textarea class="form-control textarea" id="textarea" rows="5"></textarea>
+                  </div>
+                  <div class="form-group col-12">
+                    <button type="submit" onclick="submitform()"
+                      class="form-control btn btn-outline-primary btn-sm">SEND
+                      MESSAGE
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  </section>
+
+  <%- include('footer.ejs'); -%>
+
+</html>

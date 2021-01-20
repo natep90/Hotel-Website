@@ -1,0 +1,270 @@
+/*Top Menu*/
+.navbar {
+    opacity: 0.9;
+}
+
+/*Slideshow*/
+.carousel-item img {
+    max-height: 700px;
+}
+
+
+
+
+.transparent-div {
+    opacity: 80% !important;
+}
+
+/*Contact page design*/
+.contact {
+color: #505050;
+background-color: #96d3ec;
+font-weight: 400;
+text-align: center;
+padding: 20px;
+margin-top: 10px;
+border: 1px solid black ;
+}
+
+
+input[type="email"]{
+    background-color : #f5f5f5 ; 
+    border:1px solid black;
+  
+  }
+
+input[type="name"]{
+    background-color : #f5f5f5 ; 
+    border:1px solid black;
+}
+
+#textarea {
+    resize: none;
+    background-color: #f5f5f5;
+    border:1px solid black;
+}
+
+.hotel-info {
+    color:white;
+    font-weight: 600px;
+
+}
+
+.services {
+    background-image:
+    url("https://images.unsplash.com/photo-1450818074504-fb9713fe584e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgrn-container {
+    background-color:#f8f9fa;
+    opacity: 0.9!important;
+}
+
+/*Brief info page design*/
+.p-padding {
+    padding-left: 2.25em;
+   
+}
+
+.brief-info {
+    background-color: rgb(0, 162, 255);
+}
+
+/*Footer*/
+.top-footer {
+    background-color: grey;
+    color: white;
+    padding-top: 60px;
+    text-align: justify;
+}
+
+.top-footer h3{
+    text-align: center;
+}
+
+.top-footer div div div {
+    padding-bottom: 50px;
+}
+
+#footer-links ul{
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#footer-links ul li a{
+    color: white;
+}
+
+#footer-links ul li{
+    border-bottom: 1px solid white;
+}
+
+#footer-socials a{
+    font-size: 2em;
+    color: white;
+}
+
+
+
+.bottom-footer{
+    text-align: center;
+    background-color: darkslategray;
+    color: white;
+}
+
+#footer-about{
+    text-align: justify;
+}
+
+#footer-about div{
+    text-align: center;
+}
+
+.fab {
+    padding: 20px;
+}
+
+.fab:hover {
+    color: teal;
+  }
+
+.social-buttons{
+    text-align: center;
+}
+
+#restaurant {
+background: linear-gradient(105deg, 
+rgba(23, 164, 186, 1) 0%,
+rgba(0, 0, 0, 0.7) 50%, 
+transparent 50%), url(https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) 
+center no-repeat fixed;
+background-size: cover;
+}
+
+#bar {
+    background: linear-gradient(-105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 50%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+}
+
+#swimming-pool {
+    background: linear-gradient(105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 50%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1548386704-23fc0135faab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+    }
+
+#party {
+    background: linear-gradient(-105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 50%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1496337589254-7e19d01cec44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+    }
+
+
+/*
+Price cards css starts
+*/
+.hover-bg-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(130deg, #ffffff 40%, #1cb6e2 100%);
+    z-index: -1;
+    opacity: 0
+}
+
+.hover-bg-primary:hover {
+    background: transparent
+}
+
+.hover-bg-primary:hover:before {
+    opacity: 1
+}
+
+.hover-bg-primary::before{
+    transition: ease 0.5s
+}
+
+.bg-price {
+    background-color: #1cb6e2;
+    border: 5px solid #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+#hotel-offer {
+    list-style-type: none;
+    font-size: 1.15em;
+    color: black;
+}
+
+.icon-color{
+    color: #1cb6e2;
+}
+
+.standard-room {
+    box-shadow: 10px -10px 5px #CCC;
+}
+
+ #roomtype {
+     font-size: 1.3em;
+ }
+/*
+Price cards css ends
+*/
+
+@media (max-width:992px) {
+#restaurant {
+    background: linear-gradient(105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 100%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+}
+
+#bar {
+    background: linear-gradient(-105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 100%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+}
+
+#swimming-pool {
+    background: linear-gradient(105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 100%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1548386704-23fc0135faab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+    }
+
+#party {
+    background: linear-gradient(-105deg, 
+    rgba(23, 164, 186, 1) 0%,
+    rgba(0, 0, 0, 0.7) 100%, 
+    transparent 50%), url(https://images.unsplash.com/photo-1496337589254-7e19d01cec44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) 
+    center no-repeat fixed;
+    background-size: cover;
+    }
+}

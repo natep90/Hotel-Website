@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/confirmation.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/scrolleffect.js" defer></script>
+    <script src="/js/confirmation.js" defer></script>
+    <script src="https://kit.fontawesome.com/39a837138d.js" crossorigin="anonymous"></script>
+
+    <title>Confirmation</title>
+</head>
+
+<body>
+    <!-- Nav bar section -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-container-title">
+                <h3 class="text-white">Bishee Barnabee</h3>
+            </div>
+            <ul class='nav-container-content'>
+                <li class='link'><a href='/index'>Home</a></li>
+                <li class='link'><a href='/room'>Rooms</a></li>
+                <li class='link'><a href='/index#restaurant'>Facilities</a></li>
+                <li class='link'><a href='/index#contact'>Contact</a></li>
+            </ul>
+            <div class="nav-container-menu-btn">
+                <div class="lines">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="print-confirmation-page">
+        <div class="confirmation-container-hero">
+            <div class="confirmation-container-hero-content">
+                <h2> Thank you <%- name %> </h2>
+                <p>Total cost: £<%- cost %> </p>
+                <p>Booking reference: <%- b_ref %></p>
+                <p>To check your booking in the future go to: <br> <a>localhost:3000/confirmation/<%- b_ref %></a></p>
+                <div class="confirmation-container-hero-content-button">
+                    <button id="print">PRINT</button>
+                </div>
+            </div>
+        </div>
+        <div class="booking-info-title">
+            <h2><i class="fas fa-arrow-down"></i>ORDER DETAILS <i class="fas fa-arrow-down"></i></h2>
+        </div>
+        <div class="booking-container">
+            <div class="booking-container-headers">
+                <h3>Room Number</h3>
+                <h3>Checkin Date</h3>
+                <h3>Checkout Date</h3>
+            </div>
+            <% for (let i = 0; i < r_no.length; i++) { %>
+            <div class='booking-container-item'>
+                <p> <%- r_no[i] %> </p>
+                <p> <%- checkin[i] %> </p>
+                <p> <%- checkout[i] %> </p>
+            </div>
+            <% } %>
+        </div>
+        <div class="change-booking-button-container">
+            <h3>Add a room to your booking</h3>
+        </div>
+        <div class='add-price-container'>
+            <div class='add-price-container-content'>
+                <div class="change-booking-content-container">
+                    <div class="change-booking-container-prices">
+                        <p>Current total price: £<%- cost %></p>
+                        <p id='additional-price-p'>Additional price: £0.00</p>
+                    </div>
+                    <div class="options-description">
+                        <p>Room type:</p>
+                        <p>Checkin:</p>
+                        <p>Checkout:</p>
+                    </div>
+                    <% for (let i = 0; i < r_no.length; i++) { %>
+                    <div class="change-booking-content-container-row existing-booking">
+                        <div class="change-booking-content-container-row-r_class">
+
+                            <select name="r_class" id="r_class" disabled>
+
+                                <option value="std_t" <%- roomTypes[i] === 'std_t' ? 'selected' : '' %>>Standard Twin
+                                </option>
+                                <option value="std_d" <%- roomTypes[i] === 'std_d' ? 'selected' : '' %>>Standard Double
+                                </option>
+                                <option value="sup_t" <%- roomTypes[i] === 'sup_t' ? 'selected' : '' %>>Superior Twin
+                                </option>
+                                <option value="sup_d" <%- roomTypes[i] === 'sup_d' ? 'selected' : '' %>>Superior Double
+                                </option>
+
+                            </select>
+                            <input disabled type="date" class='checkin' value='<%- checkin[i] %>'>
+                            <input disabled type="date" class='checkout' value='<%- checkout[i] %>'>
+                            <!-- <button class='remove-btn' onclick='removeFunc(this)'>Remove Room</button> -->
+
+                        </div>
+                    </div>
+                    <% } %>
+
+                </div>
+                <div class="new-room-button-container">
+                    <button id='check-availability-btn'>Check Availability</button>
+                    <button id='confirm-order-btn'>Confirm Change</button>
+                    <button id='add-room-btn'>Add Room</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('footer') %>
+</body>
+
+</html>

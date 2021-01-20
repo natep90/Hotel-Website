@@ -1,0 +1,130 @@
+body {
+    font-family:'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+}
+
+#admin-title {
+  font-size: 30px;
+  transition: all .5s;
+}
+
+#admin-title:hover {
+  transform: translateY(-2px);
+
+}
+
+
+/* navbar */
+.sidebar {
+    height: 100vh;
+    background: linear-gradient(rgba(23, 162, 184, 0.7), rgba(0, 0, 0, 1)), url('../imgs/img1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 7px 25px #999;
+  }
+
+  
+  .sidebar-href {
+    transition: all .2s;
+  }
+
+  .sidebar-href:hover {
+      background-color: rgba(53, 136, 155, 0.5);
+      border-radius: 7px;
+  }
+
+  .current {
+      background-color:  rgba(23, 162, 184, 0.7) ;
+      font-size: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5) ;
+  }
+
+  .current:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 7px;
+      box-shadow: 2px 5px 10px rgba(95, 236, 255, 0.767);
+      transform: translate(-2px);
+    }
+
+    .top-navbar {
+        background-color: rgba(53, 136, 155, 0.7);
+    }
+
+    /* Beginning of the table styles  */
+  .table-scrollbar {
+    position: relative;
+    height: 500px;
+    overflow: auto;
+    }
+    .table-scroll-y {
+    display: block;
+    }
+/* end of the table styles */
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+
+    .top-navbar {
+        position: static;
+        
+    }
+}
+      
+  /* end of navbar */
+  
+  /* card starts */
+  
+  .card-common {
+    box-shadow: 1px 1px 5px rgb(100, 100, 100);
+    transition: all .2s;
+}
+
+.card-common:hover {
+    box-shadow: 2px 4px 20px #51c5d4;
+    transform: translateY(-2px)
+}
+
+  /* card ends*/
+
+  /*option input*/
+  
+  /*change room status input style*/
+  #status {
+      background-color: #eee;
+      box-shadow: 2px 2px 2px #3e4242;
+      border-radius: 1.5em;
+      transition: all .2s;
+      margin-bottom: 1em;
+      text-align: center;
+      padding: 0px;
+  }
+
+  #status:hover {
+    box-shadow: 2px 4px 20px #1cb7d3;
+    transform: translateY(-1px)  
+  }
+
+   /*starting room status input style*/
+
+  #payment {
+    background-color: #eee;
+    box-shadow: 2px 2px 2px #3e4242;
+    border-radius: 1.5em;
+    transition: all .2s;
+    margin-bottom: 1em;
+    text-align: center;
+    padding: 0px;
+  }
+
+  #payment:hover {
+    box-shadow: 5px 5px 10px #000000;
+    transform: translateY(-1px)  
+  }
+
+  /*option input ends*/ 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Bishee Barnabee Hotel - Booking Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href='/favicon.png' />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+        defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+        defer></script>
+    <script src="https://kit.fontawesome.com/facf13c344.js" crossorigin="anonymous"></script>
+    <script src="/js/booking-form.js" defer></script>
+    <script src="/js/scrolleffect.js" defer></script>
+</head>
+
+<body id="booking_page_div">
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-container-title">
+                <h3 class="text-white">Bishee Barnabee</h3>
+            </div>
+            <ul class='nav-container-content'>
+                <li class='link'><a href='/index'>Home</a></li>
+                <li class='link'><a href='/room'>Rooms</a></li>
+                <li class='link'><a href='/index#restaurant'>Facilities</a></li>
+                <li class='link'><a href='/index#contact'>Contact</a></li>
+            </ul>
+            <div class="nav-container-menu-btn">
+                <div class="lines">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="form-element" id='form-element'>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Room Type</th>
+                    <th scope="col">Check In Date</th>
+                    <th scope="col">Check Out Date</th>
+                </tr>
+            </thead>
+            <tbody id='booking-info'>
+
+            </tbody>
+        </table>
+        <div class="price-div-container">
+
+        </div>
+        <div class="col-md-11  border border-info" id="form-div">
+            <form action="/confirmation" method='GET'>
+                <fieldset>
+                    <section>
+                        <div class="container">
+                            <h5 class="form-header">Contact Details</h5>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="c_name">Name:</label>
+                                <input type="text" class="form-control" id="c_name" name="c_name" maxlength="80"
+                                    placeholder="Joe Smith" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="c_email">Email:</label>
+                                <input type="email" class="form-control" id="c_email" name="c_email" maxlength="60"
+                                    placeholder="jsmith@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="c_address">Address:</label>
+                                <input type="text" class="form-control" id="c_address" name="c_address" maxlength="200"
+                                    placeholder="1 New Street, Norwich, NR1 2AB" required>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="container">
+                            <h5 class="form-header">Payment Info</h5>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="c_cardtype">Card Type:</label>
+                                <select class="form-control" id="c_cardtype" name="c_cardtype" required>
+                                    <option value="V">Visa</option>
+                                    <option value="MC">Mastercard</option>
+                                    <option value="A">American Express</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="c_cardno">Card Number:</label>
+                                <input class="form-control" type="tel" id="c_cardno" name="c_cardno" minlength="15"
+                                    maxlength="16" placeholder="xxxxxxxxxxxxxxxx" required>
+                                <small class="form-text text-muted">Your card will not be charge until
+                                    checkout. Please enter all 16 digits without any spaces.</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="c_cardexp">Expiration Date:</label>
+                                <input type="text" class="form-control" id="c_cardexp" name="c_cardexp"
+                                    placeholder=" MM/YY" maxlength="5" required>
+                                <small class="form-text text-muted">Please enter as MM/YY (with "/"
+                                    included)</small>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container" id="book_button">
+                            <button type="submit" id="book_button" class="btn btn-primary">Confirm Booking</button>
+                        </div>
+                        <div class="container" id="cancel_button">
+                            <button type="button" class="btn btn-warning cancel">Click Here to Cancel Booking</button>
+                        </div>
+                    </section>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </main>
+
+
+    <%- include('footer') %>
+
+</body>
+
+</html>
