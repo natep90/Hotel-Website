@@ -730,5 +730,5 @@ app.post('/insertroomtodb', jsonParser, async (req, res) => {
     })
 })
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT, '0.0.0.0');
 
