@@ -21,7 +21,7 @@ app.get('/index', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM rates;
     `
@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM rates;
     `
@@ -82,7 +82,7 @@ app.get('/room', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM rates;
     `
@@ -121,7 +121,7 @@ app.get('/rooms', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = 'SET SEARCH_PATH TO hotelbooking; SELECT * FROM room JOIN rates ON rates.r_class = room.r_class ORDER BY r_no ASC;'
+    const q = 'SET SEARCH_PATH TO public; SELECT * FROM room JOIN rates ON rates.r_class = room.r_class ORDER BY r_no ASC;'
 
     await client.query(q).then(results => {
         client.release();
@@ -145,7 +145,7 @@ app.post('/updateStatus', jsonParser, async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = `SET SEARCH_PATH TO hotelbooking; UPDATE room SET r_status = '${roomStatus[0]}' WHERE r_no = ${roomNumber};`;
+    const q = `SET SEARCH_PATH TO public; UPDATE room SET r_status = '${roomStatus[0]}' WHERE r_no = ${roomNumber};`;
     await client.query(q).then(results => {
         client.release();
         // get the results from the second query
@@ -168,7 +168,7 @@ app.get('/admin', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = 'SET SEARCH_PATH TO hotelbooking; SELECT b_ref, c_name, b_cost, b_outstanding FROM booking JOIN customer ON booking.c_no=customer.c_no ORDER BY booking.b_ref ASC;'
+    const q = 'SET SEARCH_PATH TO public; SELECT b_ref, c_name, b_cost, b_outstanding FROM booking JOIN customer ON booking.c_no=customer.c_no ORDER BY booking.b_ref ASC;'
     await client.query(q).then(results => {
         client.release();
 
@@ -190,7 +190,7 @@ app.post('/processPayment', jsonParser, async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = `SET SEARCH_PATH TO hotelbooking; 
+    const q = `SET SEARCH_PATH TO public; 
     UPDATE booking SET b_outstanding = ${payment} WHERE b_ref=${bookingNumber};`;
     await client.query(q).then(results => {
         client.release();
@@ -216,7 +216,7 @@ app.post('/extraPayment', jsonParser, async (req, res) => {
     const client = await pool.connect();
     console.log('')
     let data;
-    const q = `SET SEARCH_PATH TO hotelbooking; 
+    const q = `SET SEARCH_PATH TO public; 
     UPDATE booking SET b_cost = ${extra}, b_outstanding = ${b_out} WHERE b_ref=${bookingNumber};`;
     await client.query(q).then(results => {
         client.release();
@@ -238,7 +238,7 @@ app.get('/roomprices', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = 'SET SEARCH_PATH TO hotelbooking; SELECT * FROM rates ORDER BY r_class ASC;'
+    const q = 'SET SEARCH_PATH TO public; SELECT * FROM rates ORDER BY r_class ASC;'
     await client.query(q).then(results => {
         client.release();
 
@@ -260,7 +260,7 @@ app.post('/changePrice', jsonParser, async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let data;
-    const q = `SET SEARCH_PATH TO hotelbooking; 
+    const q = `SET SEARCH_PATH TO public; 
     UPDATE rates SET price = ${new_price} WHERE r_class='${rclass}';`;
     await client.query(q).then(results => {
         client.release();
@@ -282,7 +282,7 @@ app.get('/confirmation/:id', jsonParser, async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM booking WHERE b_ref = ${req.params['id']};
 
@@ -336,7 +336,7 @@ app.get('/currentbooking', jsonParser, async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM querybooking;
     `
@@ -351,7 +351,7 @@ app.post('/roomcheck', jsonParser, async (request, response) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     const PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     CREATE TABLE IF NOT EXISTS querybooking (
         r_no integer not null,
@@ -537,7 +537,7 @@ app.post('/updateoutstanding', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
     UPDATE booking
     SET b_cost = b_cost + ${req.body['additional']},
         b_outstanding = b_outstanding + ${req.body['additional']}
@@ -560,7 +560,7 @@ app.get('/roomcheck', async (request, response) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
     TRUNCATE TABLE querybooking;
     `
     await client.query(PSQL).then(results => {
@@ -581,7 +581,7 @@ app.get('/getroomrates', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     SELECT * FROM rates
     `
@@ -595,7 +595,7 @@ app.get('/clearcurrentbooking', async (req, res) => {
     const pool = new pg.Pool(config);
     const client = await pool.connect();
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
     TRUNCATE TABLE querybooking;
     `
     await client.query(PSQL).then(results => {
@@ -630,7 +630,7 @@ app.post('/makebooking', async (req, res) => {
     let body = req.body
 
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
     SELECT c_no FROM customer;
     SELECT b_ref FROM booking; 
     `
@@ -665,7 +665,7 @@ app.post('/makebooking', async (req, res) => {
     const roomInfo = req.body.room
     // booking is inserted into the database
     let PSQL2 = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
     INSERT INTO customer (c_no, c_name, c_email, c_address, c_cardtype, c_cardexp, c_cardno) 
     VALUES (
         '${customerNo}',
@@ -718,7 +718,7 @@ app.post('/insertroomtodb', jsonParser, async (req, res) => {
     let checkout = req.body['checkout']
 
     let PSQL = `
-    SET SEARCH_PATH TO hotelbooking;
+    SET SEARCH_PATH TO public;
 
     INSERT INTO roombooking VALUES (${r_no}, ${b_ref}, '${checkin}', '${checkout}')
     `;
